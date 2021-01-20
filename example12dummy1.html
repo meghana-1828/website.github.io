@@ -1,0 +1,240 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+  
+
+<style>
+body{
+  background-color: white;
+}
+/*/=============personal details============================/*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 50px;
+  border-color: red;
+
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-color: red;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+
+
+/*/=====================================cards===============================/*/
+
+.card{
+  background-color:       #fffffc;
+  padding: 20px;
+ margin-top: 20px;
+margin: 20px;
+  border-radius: 10px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.card:hover {
+  box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<!----------------personal details------------------------------------>
+<div style="overflow: ">
+  <table>
+                  <h1>Personal Details</h1>
+                  <tr>
+                    <th>First Name</th>
+                    <th><input  placeholder="Enter Name" name="psw" required></th>
+                
+                
+                  </tr>
+                  <tr>
+                    <th>Gender</th>
+                    <th><input list="browsers" name="browser" placeholder="Enter Gender">
+                                      <datalist id="browsers">
+                                        <option value="Male">
+                                        <option value="Female">
+                                        <option value="Other">
+                                      </datalist></th>
+                
+                  </tr>
+                  <tr>
+                    <th>Age</th>
+                    <th><input  placeholder="Enter Age" name="psw" required></th>
+                  </tr>
+                  <tr>
+                        <th>Contact number</th>
+                        <th><input  placeholder="Enter Number" name="psw" required></th>
+                  </tr>
+                    <tr>
+                          <th>Mail id</th>
+                          <th><input  placeholder="Enter mail" name="psw" required></th> 
+                    </tr>
+                   <tr>
+                        <th>Payment</th>
+                          <th><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Payment</button></th>
+   
+                        <div id="id01" class="w3-modal">
+ <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+  <header class="w3-container w3-grey"> 
+   <span onclick="document.getElementById('id01').style.display='none'" 
+   class="w3-button w3-grey w3-xlarge w3-display-topright">&times;</span>
+   <h2>Payment</h2>
+  </header>
+
+  <div class="w3-bar w3-border-bottom">
+   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'London')">Payment mode</button>
+   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'Paris')">Enter Payment Information</button>
+   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'Tokyo')">Proceed</button>
+  </div>
+
+  <div id="London" class="w3-container city">
+   <h5><b>Payment method by</b>-Credit card,Bank transfer,PayPal</h5><br>
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" style="width: 70px;">
+   <img src="https://1000logos.net/wp-content/uploads/2017/03/MasterCard-emblem.png" style="width: 70px;">
+   <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Google-Pay-Logo-Icon-PNG.png" style="width: 70px;">
+   <img src="https://www.searchpng.com/wp-content/uploads/2018/11/phone-pe.png" style="width: 70px;">
+  <input placeholder="Enter..."><br>
+
+
+  </div>
+
+  <div id="Paris" class="w3-container city">
+     <h4><b>Card Number</b></h4><input placeholder="">
+     <h4><b>Expires On</b></h4><input type="date" id="myDate" value="2014-02-09" style="font-size: 15px;">
+  <script>
+function myFunction() {
+  var x = document.getElementById("myDate").value;
+  document.getElementById("demo").innerHTML = x;
+}    
+</script>
+ <h4><b>Street Adress</b></h4><input placeholder="">
+  
+  <h4><b>Zip Code</b></h4><input placeholder="">
+  </div>
+
+  <div id="Tokyo" class="w3-container city">
+   <p><b>By clicking on the Pay button below to proceed with the booking, I confirm that I have read and I accept the Fare Rules , the Privacy Policy , the User Agreement and Terms of Service of Booking</b></p>
+    <h6><b>Amout:₹2,626</b></h6>
+    <button type="button" style="color:black;">Pay</button>
+  </div>
+
+  <div class="w3-container w3-light-grey w3-padding">
+   <button class="w3-button w3-right w3-white w3-border" 
+   onclick="document.getElementById('id01').style.display='none'">Close</button>
+  </div>
+ </div>
+</div>
+
+</div>
+
+<script>
+document.getElementsByClassName("tablink")[0].click();
+
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].classList.remove("w3-light-grey");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.classList.add("w3-light-grey");
+}
+</script> 
+    </tr>
+  </table>
+</div><br><br>
+
+
+<!----------------ticket------------------------------------>
+
+   <!-- <div class="row"> -->
+  <div class="container">
+    <div class="card-deck" >
+      <div class="card bg-light" style="width: 80%;">
+        <div class="card-body text-center">
+        <!-- <div class="card"> -->
+      
+            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvCrlH8kVQsWFOiV38TQaeILJcd24Vmtk1EQ&usqp=CAU" width="100px;">
+            <p >DEL_MAA <p>Non stop | 2 hrs 55 mins | Economy</p></p></div>
+          <hr>
+        
+        
+              <div ><img src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=5indiG0" style="width:50px;height: 70px; font-size: 20px;"> Indigo
+                  <div >07:20<br>Thu,01 Apr 21 <br>Hyderabad </div>
+             
+                  <div >10:15<br>Thu,01 Apr 21<br>Chennai</div>
+            </div>
+        </div>
+    </div>
+  <!-- </div> -->
+
+
+
+<!----------------Fare------------------------------------>
+  <!-- <div class="row"> -->
+  <!-- <div class="ruff"> -->
+   <!-- <div class="card"> -->
+    <div class="card bg-light" style="width:80%;">
+          <div class="card-body text-center">
+                <h1>Fare summary</h1>
+    
+                         <p>Base Fare</p><p>Adults(s)(1 x ₹2,125)     
+                         <h3> ₹2,125<hr></h3>
+                        <div>Fee and subcharges </div>
+                      <h3> ₹491<hr></h3>
+                      <p>Other Services</p>
+                      <h3>₹10<hr></h3>
+                     <h4>Total Amount:     ₹2,626</h4>
+
+
+   
+               </div>
+            </div>
+</div>
+</div>
+<!-- </p> -->
+ 
+ <!----------------Info----------------------------------->
+
+<div class="card" style="padding: ">  
+    <h3><b>Important Information</b></h3>
+    <h3>Mandatory check-list for passengers:</h3>
+    <p>1. Certify your health status through the Aarogya Setu app or the self-declaration form at the airport.</p>
+    <p>2. Remember to web check-in before arriving at the airport; carry a printed or soft copy of the boarding pass.</p>
+    <p>3. Please reach at least 2 hours prior to flight departure.</p>
+    
+    <p>5. Face masks are compulsory.</p>
+    <p>6. Remember to download the baggage tag(s) and affix it on your bag(s).</p>
+    <h3>Baggage information:</h3>
+    <p>Carry no more than 1 check-in baggage and 1 hand baggage per passenger. Additional pieces of Baggage will be subject to additional charges of INR 750 per piece in addition to the excess baggage charges.</p>
+</div>
+<!-- </div> -->
+</body>
+</html>
